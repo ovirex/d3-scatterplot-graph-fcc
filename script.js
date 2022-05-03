@@ -2,7 +2,7 @@ const url =
     "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json";
 
 const tooltip = d3
-    .select("body")
+    .select(".main")
     .append("div")
     .attr("id", "tooltip")
     .attr("class", "hidden");
@@ -11,7 +11,7 @@ const h = 500;
 const w = 700;
 const padding = 30;
 
-const svg = d3.select("body").append("svg").attr("height", h).attr("width", w);
+const svg = d3.select(".main").append("svg").attr("height", h).attr("width", w);
 
 // Define the range of the scales
 const xScale = d3.scaleLinear();
@@ -102,10 +102,8 @@ d3.json(url).then((data) => {
 
             tooltip.attr("data-year", event.target.dataset.xvalue);
 
-            tooltip.style(
-                "transform",
-                `translate(${event.pageX - 5}px,${event.pageY - 90}px)`
-            );
+            tooltip.style("top", event.pageY + "px");
+            tooltip.style("left", event.pageX + "px");
         })
         .on("mouseout", () => tooltip.classed("hidden", true));
 

@@ -1,5 +1,22 @@
 * {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: cornflowerblue;
+}
+.main {
+    background-color: #fff;
+    box-shadow: 1px 1px 7px 2px #00000059;
+    max-width: 1010px;
+    margin: 0 auto;
+    height: 550px;
+    display: flex;
+    align-items: center;
 }
 
 svg {
@@ -10,6 +27,10 @@ svg {
 
 #title {
     text-align: center;
+    margin-block-end: 0.5em;
+    padding-block-start: 0.5em;
+    color: #fff;
+    text-decoration: underline;
 }
 
 #legend {
