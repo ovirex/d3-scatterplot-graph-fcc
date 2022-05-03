@@ -88,7 +88,7 @@ d3.json(url).then((data) => {
         .attr("stroke", "#000")
         .attr("stroke-width", 1)
         .attr("stroke-opacity", 1)
-        .attr("r", 7)
+        .attr("r", 0)
         .attr("cx", (d) => xScale(d.Year))
         .attr("cy", (d) => yScale(parseTime(d.Seconds)))
         .on("mouseover", (event, d) => {
@@ -108,4 +108,12 @@ d3.json(url).then((data) => {
             );
         })
         .on("mouseout", () => tooltip.classed("hidden", true));
+
+    // Add transition
+    svg.selectAll("circle")
+        .transition()
+        .ease(d3.easePoly)
+        .duration(600)
+        .delay((d, i) => i * 30)
+        .attr("r", 7);
 });
