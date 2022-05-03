@@ -1,0 +1,31 @@
+* {
+    font-family: sans-serif;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+#title {
+    text-align: center;
+}
+
+#legend {
+    transform: translate(700px, 50%);
+}
+
+#tooltip {
+    position: absolute;
+    transform-origin: 0 0;
+    background-color: #74aefbc2;
+    padding: 1em;
+    border-radius: 28px;
+    border: 1px solid #000;
+    width: 300px;
+}
+
+#tooltip.hidden {
+    display: none;
+}
